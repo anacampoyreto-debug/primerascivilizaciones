@@ -3,25 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Historia Interactiva ULTRA V3 - Mesopotamia y Egipto</title>
+<title>MESOPOTAMIA Y EGIPTO</title>
 
 <style>
   :root{
-    --bg:#f4f7fc;
-    --bg-soft:#f8fbff;
-    --card:#ffffff;
-    --text:#13233f;
-    --muted:#66758f;
-    --line:#dbe4f2;
-    --primary:#3558d8;
-    --primary-2:#6b8cff;
-    --accent:#0ea5a4;
-    --success:#198754;
-    --danger:#d6336c;
-    --warning:#f59f00;
-    --gold:#f4b400;
-    --violet:#7c3aed;
-    --shadow:0 12px 30px rgba(20,35,70,.10);
+    --bg:#f7f0df;
+    --bg-soft:#fcf7ea;
+    --card:#fffaf0;
+    --text:#4c3927;
+    --muted:#7a6754;
+    --line:#dbc8ab;
+    --primary:#b38b59;
+    --primary-2:#d1b07a;
+    --accent:#8c6a43;
+    --success:#6f8b4e;
+    --danger:#b85c4b;
+    --warning:#c6913b;
+    --gold:#d4a84f;
+    --brown:#7b5a3a;
+    --sand:#ead8b7;
+    --shadow:0 12px 30px rgba(95,72,42,.12);
     --radius-xl:24px;
     --radius-lg:18px;
     --radius-md:12px;
@@ -33,7 +34,7 @@
   body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(180deg,#f4f7fc 0%,#eef3fb 100%);
+    background:linear-gradient(180deg,#f8f1e3 0%,#f2e7d1 100%);
     color:var(--text);
     padding:20px;
   }
@@ -44,23 +45,46 @@
   }
 
   .hero{
-    background:linear-gradient(135deg,var(--primary),var(--primary-2));
-    color:white;
+    background:linear-gradient(135deg,#c7a875,#e6cf9d);
+    color:#4b3723;
     border-radius:var(--radius-xl);
     padding:30px;
     box-shadow:var(--shadow);
     margin-bottom:20px;
+    border:1px solid #d8c09b;
   }
 
   .hero h1{
     margin:0 0 10px 0;
-    font-size:2rem;
+    font-size:2.2rem;
+    color:#5c442c;
   }
 
   .hero p{
     margin:0;
     line-height:1.65;
-    opacity:.98;
+  }
+
+  .hero-icons{
+    margin-top:16px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    font-size:1.9rem;
+  }
+
+  .icon-chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,250,240,.55);
+    border:1px solid rgba(123,90,58,.18);
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:1rem;
+    color:#5b432b;
+    font-weight:bold;
   }
 
   .top-grid{
@@ -75,7 +99,7 @@
     border-radius:var(--radius-lg);
     box-shadow:var(--shadow);
     padding:18px;
-    border:1px solid rgba(219,228,242,.8);
+    border:1px solid rgba(219,200,171,.85);
   }
 
   .stats-grid{
@@ -95,7 +119,7 @@
   .stat .num{
     font-size:1.35rem;
     font-weight:bold;
-    color:var(--primary);
+    color:var(--brown);
   }
 
   .stat .label{
@@ -110,16 +134,16 @@
     margin-bottom:20px;
     border-radius:var(--radius-lg);
     box-shadow:var(--shadow);
-    border:1px solid rgba(219,228,242,.8);
+    border:1px solid rgba(219,200,171,.85);
   }
 
   h2{
     margin-top:0;
-    color:var(--primary);
+    color:#7b5a3a;
   }
 
   h3{
-    color:#2647b8;
+    color:#8c6a43;
     margin-bottom:8px;
   }
 
@@ -133,11 +157,12 @@
     display:inline-block;
     padding:6px 12px;
     border-radius:999px;
-    background:#edf2ff;
-    color:var(--primary);
+    background:#f1e3c7;
+    color:#7b5a3a;
     font-size:.85rem;
     font-weight:bold;
     margin-bottom:12px;
+    border:1px solid #dbc8ab;
   }
 
   textarea,
@@ -148,10 +173,11 @@
     padding:12px;
     margin-top:10px;
     margin-bottom:10px;
-    border:1px solid #cfd8ea;
+    border:1px solid #cfb993;
     border-radius:12px;
     font-size:1rem;
-    background:#fbfdff;
+    background:#fffdf8;
+    color:#4c3927;
   }
 
   textarea{
@@ -174,12 +200,12 @@
   }
 
   .primary{background:var(--primary);color:white;}
-  .secondary{background:#dfe6f3;color:#22324d;}
+  .secondary{background:#eadcc0;color:#5a4229;}
   .success{background:var(--success);color:white;}
   .danger{background:var(--danger);color:white;}
   .warning{background:var(--warning);color:white;}
   .accent{background:var(--accent);color:white;}
-  .violet{background:var(--violet);color:white;}
+  .brown{background:var(--brown);color:white;}
 
   .nav{
     display:flex;
@@ -190,16 +216,17 @@
 
   .progress{
     height:12px;
-    background:#dfe6f3;
+    background:#eadcc0;
     border-radius:999px;
     overflow:hidden;
     margin:14px 0 8px;
+    border:1px solid #dbc8ab;
   }
 
   .bar{
     height:100%;
     width:0%;
-    background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    background:linear-gradient(90deg,#b38b59,#d1b07a);
     transition:.35s ease;
   }
 
@@ -215,7 +242,7 @@
   }
 
   .star-on{color:var(--gold);}
-  .star-off{color:#d6dde8;}
+  .star-off{color:#cbbba4;}
 
   .correct{
     color:var(--success);
@@ -231,8 +258,8 @@
     margin-top:6px;
     padding:10px 12px;
     border-radius:12px;
-    background:#f8fbff;
-    border:1px solid #e3ebf8;
+    background:#fdf8ef;
+    border:1px solid #e4d2b8;
   }
 
   .small{font-size:.94rem}
@@ -245,20 +272,20 @@
   }
 
   .vocab-item{
-    background:#f8fbff;
+    background:#fcf7ea;
     border:1px solid var(--line);
     border-radius:14px;
     padding:14px;
   }
 
   .vocab-item b{
-    color:#1f3fa8;
+    color:#7b5a3a;
   }
 
   .question-block{
     margin-bottom:22px;
     padding-bottom:18px;
-    border-bottom:1px solid #edf2fa;
+    border-bottom:1px solid #eadcc0;
   }
 
   .question-block:last-child{
@@ -269,14 +296,14 @@
     display:block;
     margin:8px 0;
     padding:10px 12px;
-    background:#f8fbff;
-    border:1px solid #dbe4f2;
+    background:#fcf7ea;
+    border:1px solid #dbc8ab;
     border-radius:12px;
   }
 
   .exam-box{
-    background:#f8fbff;
-    border:1px dashed #bfd0f0;
+    background:#fcf7ea;
+    border:1px dashed #c9b089;
     border-radius:16px;
     padding:16px;
     margin-top:16px;
@@ -299,11 +326,12 @@
     display:inline-block;
     padding:7px 12px;
     border-radius:999px;
-    background:#eef5ff;
-    color:var(--primary);
+    background:#f2e5ca;
+    color:#6a4c2e;
     font-size:.9rem;
     font-weight:bold;
     margin:4px 6px 4px 0;
+    border:1px solid #dbc8ab;
   }
 
   .ranking{
@@ -315,19 +343,19 @@
     display:none;
     margin-top:8px;
     padding:10px 12px;
-    border-left:4px solid var(--accent);
-    background:#f4fffe;
+    border-left:4px solid #b38b59;
+    background:#fff8eb;
     border-radius:10px;
   }
 
   .timer-big{
     font-size:1.6rem;
     font-weight:bold;
-    color:var(--primary);
+    color:#7b5a3a;
   }
 
   .result-box{
-    background:#f8fbff;
+    background:#fcf7ea;
     border:1px solid var(--line);
     border-radius:14px;
     padding:14px;
@@ -341,7 +369,7 @@
   }
 
   .match-item{
-    background:#f8fbff;
+    background:#fcf7ea;
     border:1px solid var(--line);
     border-radius:12px;
     padding:12px;
@@ -355,17 +383,18 @@
   }
 
   .drag-item{
-    background:#eef4ff;
-    border:2px dashed #9cb7ef;
+    background:#f5e7cc;
+    border:2px dashed #b89563;
     border-radius:12px;
     padding:12px;
     cursor:grab;
     font-weight:bold;
+    color:#5a4129;
   }
 
   .drop-zone{
-    background:#fbfdff;
-    border:2px dashed #c8d6ee;
+    background:#fffdf8;
+    border:2px dashed #cbb28a;
     border-radius:12px;
     padding:14px;
     min-height:90px;
@@ -374,18 +403,8 @@
   .drop-zone strong{
     display:block;
     margin-bottom:8px;
-    color:#2746b5;
+    color:#7b5a3a;
   }
-
-  .dropped{
-    background:#e9fff2;
-    border:1px solid #a7e0ba;
-    border-radius:10px;
-    padding:8px;
-    margin-top:8px;
-  }
-
-  .hidden{display:none}
 
   table{
     width:100%;
@@ -400,8 +419,8 @@
   }
 
   th{
-    background:#eef4ff;
-    color:#2441a7;
+    background:#f2e5ca;
+    color:#6a4c2e;
   }
 
   @media (max-width:900px){
@@ -414,6 +433,7 @@
     .nav{flex-direction:column}
     .nav button{width:100%}
     .stats-grid{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:1.8rem}
   }
 </style>
 </head>
@@ -422,14 +442,21 @@
 <div class="container">
 
   <div class="hero">
-    <h1>Historia Interactiva ULTRA V3</h1>
+    <h1>MESOPOTAMIA Y EGIPTO</h1>
     <p>
-      Web interactiva completa sobre Mesopotamia y Egipto con vocabulario en inglés,
-      definiciones en inglés, preguntas cortas, test, verdadero o falso, emparejar,
-      arrastrar y soltar, examen aleatorio, ranking local, estrellas, temporizadores
-      y más banco de preguntas sobre sociedad egipcia, escultura, pirámides y vida
-      después de la muerte.
+      Web interactiva para repasar Mesopotamia y Egipto con actividades, preguntas cortas,
+      test, verdadero o falso, emparejar, arrastrar y soltar, examen aleatorio y un apartado
+      específico de vocabulario con términos y definiciones en inglés.
     </p>
+
+    <div class="hero-icons">
+      <div class="icon-chip">🏺 Mesopotamia</div>
+      <div class="icon-chip">𓂀 Egipto</div>
+      <div class="icon-chip">🐪 Pirámides</div>
+      <div class="icon-chip">🪨 Escultura</div>
+      <div class="icon-chip">📜 Escritura</div>
+      <div class="icon-chip">⚱️ Vida después de la muerte</div>
+    </div>
   </div>
 
   <div class="top-grid">
@@ -465,7 +492,7 @@
     </div>
 
     <div class="control-card">
-      <h3>Panel ultra</h3>
+      <h3>Panel general</h3>
       <p class="muted">Tiempo total de estudio</p>
       <div class="timer-big" id="studyTimer">00:00</div>
       <p class="muted" style="margin-top:12px;">Última nota de examen</p>
@@ -489,31 +516,32 @@
 
   <!-- PASO 1 -->
   <div class="card step">
-    <span class="mini-badge">INTRODUCTION</span>
-    <h2>What are we going to study?</h2>
+    <span class="mini-badge">INTRODUCCIÓN</span>
+    <h2>¿Qué vamos a estudiar?</h2>
     <p>
-      In this interactive activity you will review the first civilizations of the Ancient Age:
-      <b>Mesopotamia</b> and <b>Egypt</b>. You will practise important facts about rivers, writing,
-      society, religion, art, pyramids, sculpture and life after death.
+      En esta actividad interactiva vas a repasar las primeras civilizaciones de la Edad Antigua:
+      <b>Mesopotamia</b> y <b>Egipto</b>. Practicarás contenidos importantes sobre ríos, escritura,
+      sociedad, religión, arte, pirámides, escultura y vida después de la muerte.
     </p>
     <p>
-      You will also learn and revise <b>English vocabulary</b> with <b>definitions in English</b>.
+      Además, aprenderás y repasarás <b>vocabulario en inglés</b> con <b>definiciones en inglés</b>
+      solamente en ese apartado específico.
     </p>
 
     <div class="top-actions">
       <button class="primary" onclick="toggleMusic()">🎵 Música</button>
       <button class="secondary" onclick="goToStep(1)">Esquema</button>
-      <button class="secondary" onclick="goToStep(2)">Vocabulary</button>
+      <button class="secondary" onclick="goToStep(2)">Vocabulario</button>
       <button class="secondary" onclick="goToStep(8)">Examen</button>
     </div>
 
     <div>
       <span class="pill">Mesopotamia</span>
-      <span class="pill">Egypt</span>
-      <span class="pill">Society</span>
-      <span class="pill">Pyramids</span>
-      <span class="pill">Sculpture</span>
-      <span class="pill">Afterlife</span>
+      <span class="pill">Egipto</span>
+      <span class="pill">Sociedad</span>
+      <span class="pill">Pirámides</span>
+      <span class="pill">Escultura</span>
+      <span class="pill">Vida después de la muerte</span>
       <span class="pill">Vocabulary in English</span>
     </div>
 
@@ -524,26 +552,26 @@
 
   <!-- PASO 2 -->
   <div class="card step">
-    <span class="mini-badge">SCHEMA</span>
+    <span class="mini-badge">ESQUEMA</span>
     <h2>Esquema (hazlo en tu cuaderno)</h2>
 
-    <label>1. Rivers of Mesopotamia</label>
-    <input id="e1" type="text" placeholder="Write the rivers of Mesopotamia">
+    <label>1. Ríos de Mesopotamia</label>
+    <input id="e1" type="text" placeholder="Escribe los ríos de Mesopotamia">
 
-    <label>2. Type of writing in Mesopotamia</label>
-    <input id="e2" type="text" placeholder="Write the type of writing">
+    <label>2. Tipo de escritura de Mesopotamia</label>
+    <input id="e2" type="text" placeholder="Escribe el tipo de escritura">
 
-    <label>3. River of Egypt</label>
-    <input id="e3" type="text" placeholder="Write the river of Egypt">
+    <label>3. Río de Egipto</label>
+    <input id="e3" type="text" placeholder="Escribe el río de Egipto">
 
-    <label>4. Ruler of Ancient Egypt</label>
-    <input id="e4" type="text" placeholder="Write the ruler of Egypt">
+    <label>4. Gobernante del Antiguo Egipto</label>
+    <input id="e4" type="text" placeholder="Escribe quién gobernaba Egipto">
 
-    <label>5. Religion of Egypt</label>
-    <input id="e5" type="text" placeholder="Write the religion type">
+    <label>5. Religión de Egipto</label>
+    <input id="e5" type="text" placeholder="Escribe cómo era la religión">
 
-    <label>6. Main function of pyramids</label>
-    <input id="e6" type="text" placeholder="Write the main function">
+    <label>6. Función principal de las pirámides</label>
+    <input id="e6" type="text" placeholder="Escribe su función principal">
 
     <button class="primary" onclick="checkSchema()">Comprobar</button>
     <button class="secondary" onclick="toggleModel('schemaModel')">Ver respuestas modelo</button>
@@ -551,67 +579,48 @@
 
     <div id="schemaModel" class="model-answer">
       <b>Modelo:</b><br>
-      1. Tigris and Euphrates<br>
-      2. Cuneiform writing<br>
-      3. Nile<br>
-      4. Pharaoh<br>
-      5. Polytheistic religion<br>
-      6. Tombs for pharaohs
+      1. Tigris y Éufrates<br>
+      2. Escritura cuneiforme<br>
+      3. Nilo<br>
+      4. Faraón<br>
+      5. Religión politeísta<br>
+      6. Tumbas para faraones
     </div>
   </div>
 
   <!-- PASO 3 -->
   <div class="card step">
     <span class="mini-badge">VOCABULARY IN ENGLISH</span>
-    <h2>Vocabulary</h2>
-    <p class="muted">All terms and definitions are in English.</p>
+    <h2>Vocabulary Practice</h2>
+    <p class="muted">All tasks in this section are in English only.</p>
 
-    <input type="search" id="vocabSearch" placeholder="Search vocabulary in English..." oninput="filterVocabulary()">
-
-    <div class="vocab-grid" id="vocabGrid">
-      <div class="vocab-item"><b>Hydraulic civilizations</b><br>Civilizations that grew and prospered thanks to the use of river water.</div>
-      <div class="vocab-item"><b>Ancient Age</b><br>A historical period that began when writing was invented.</div>
-      <div class="vocab-item"><b>Cuneiform writing</b><br>An early writing system from Mesopotamia made with wedge-shaped signs.</div>
-      <div class="vocab-item"><b>Hieroglyphic writing</b><br>A writing system from Ancient Egypt that used pictures and symbols.</div>
-      <div class="vocab-item"><b>Scribe</b><br>A person who wrote documents and kept records in Ancient Egypt.</div>
-      <div class="vocab-item"><b>City-state</b><br>An independent city and the land around it with its own government.</div>
-      <div class="vocab-item"><b>Ziggurat</b><br>A stepped temple built in Mesopotamia.</div>
-      <div class="vocab-item"><b>Upper Egypt</b><br>The southern part of Ancient Egypt.</div>
-      <div class="vocab-item"><b>Lower Egypt</b><br>The northern part of Ancient Egypt, near the Nile delta.</div>
-      <div class="vocab-item"><b>Pharaoh</b><br>The ruler of Ancient Egypt.</div>
-      <div class="vocab-item"><b>Polytheism</b><br>The belief in more than one god.</div>
-      <div class="vocab-item"><b>Ka</b><br>The soul in Ancient Egyptian beliefs.</div>
-      <div class="vocab-item"><b>Mummification</b><br>The process of preserving a dead body.</div>
-      <div class="vocab-item"><b>Mastaba</b><br>An early Egyptian tomb with a simple rectangular shape.</div>
-      <div class="vocab-item"><b>Pyramid</b><br>A monumental tomb with triangular sides built for Egyptian pharaohs.</div>
-      <div class="vocab-item"><b>Hypogeum</b><br>An underground tomb with chambers and corridors.</div>
-      <div class="vocab-item"><b>Afterlife</b><br>Life after death.</div>
-      <div class="vocab-item"><b>Sarcophagus</b><br>A stone coffin where a mummy was placed.</div>
-      <div class="vocab-item"><b>Canopic jars</b><br>Special jars used to keep organs during mummification.</div>
-      <div class="vocab-item"><b>Temple</b><br>A building dedicated to the gods.</div>
-      <div class="vocab-item"><b>Sculpture</b><br>Art made by carving or shaping materials such as stone or wood.</div>
-      <div class="vocab-item"><b>Relief</b><br>A type of sculpture carved on a flat surface.</div>
-      <div class="vocab-item"><b>Mummy</b><br>A preserved dead body in Ancient Egypt.</div>
-      <div class="vocab-item"><b>Funerary goods</b><br>Objects buried with the dead for use in the afterlife.</div>
-      <div class="vocab-item"><b>Nile</b><br>The river that was essential for life and agriculture in Ancient Egypt.</div>
-      <div class="vocab-item"><b>Delta</b><br>A flat area where a river splits into branches before reaching the sea.</div>
-      <div class="vocab-item"><b>Flood</b><br>The overflowing of river water over land.</div>
-      <div class="vocab-item"><b>Harvest</b><br>The time when crops are collected from the fields.</div>
+    <div class="result-box">
+      <p><b>Vocabulary score:</b> <span id="vocabScore">0</span></p>
+      <p><b>Completed items:</b> <span id="vocabDone">0</span> / <span id="vocabTotal">0</span></p>
     </div>
+
+    <div class="top-actions">
+      <button class="primary" onclick="shuffleVocabularyActivities()">Shuffle words</button>
+      <button class="secondary" onclick="toggleVocabularyModels()">Show / hide model answers</button>
+      <button class="warning" onclick="resetVocabularyAnswers()">Reset vocabulary</button>
+    </div>
+
+    <input type="search" id="vocabSearch" placeholder="Search for a word or definition..." oninput="filterVocabularyActivities()">
+
+    <div id="vocabActivities"></div>
   </div>
 
   <!-- PASO 4 -->
   <div class="card step">
-    <span class="mini-badge">SHORT QUESTIONS</span>
-    <h2>Preguntas cortas premium</h2>
-
+    <span class="mini-badge">PREGUNTAS CORTAS</span>
+    <h2>Preguntas cortas</h2>
     <div id="shortQuestionsWrap"></div>
   </div>
 
   <!-- PASO 5 -->
   <div class="card step">
     <span class="mini-badge">TEST</span>
-    <h2>Test interactivo ultra</h2>
+    <h2>Test interactivo</h2>
     <div id="testContainer"></div>
     <button class="primary" onclick="checkAllTests()">Corregir test</button>
     <div id="testResult" class="feedback"></div>
@@ -619,36 +628,36 @@
 
   <!-- PASO 6 -->
   <div class="card step">
-    <span class="mini-badge">TRUE OR FALSE</span>
+    <span class="mini-badge">VERDADERO O FALSO</span>
     <h2>Verdadero o Falso</h2>
     <div id="vfContainer"></div>
-    <button class="primary" onclick="checkAllVF()">Corregir verdadero/falso</button>
+    <button class="primary" onclick="checkAllVF()">Corregir verdadero o falso</button>
     <div id="vfResult" class="feedback"></div>
   </div>
 
   <!-- PASO 7 -->
   <div class="card step">
-    <span class="mini-badge">MATCHING</span>
+    <span class="mini-badge">EMPAREJAR</span>
     <h2>Empareja concepto y definición</h2>
     <p>Escribe el número correcto en cada definición.</p>
 
     <div class="match-grid">
       <div class="match-item">
-        <h3>Concepts</h3>
-        <p>1. Pharaoh</p>
-        <p>2. Pyramid</p>
-        <p>3. Mummification</p>
-        <p>4. Cuneiform writing</p>
-        <p>5. Ziggurat</p>
+        <h3>Conceptos</h3>
+        <p>1. Faraón</p>
+        <p>2. Pirámide</p>
+        <p>3. Momificación</p>
+        <p>4. Escritura cuneiforme</p>
+        <p>5. Zigurat</p>
       </div>
 
       <div class="match-item">
-        <h3>Definitions</h3>
-        <label>A. The process of preserving a dead body <input id="matchA" type="number" min="1" max="5"></label>
-        <label>B. The ruler of Ancient Egypt <input id="matchB" type="number" min="1" max="5"></label>
-        <label>C. A stepped temple in Mesopotamia <input id="matchC" type="number" min="1" max="5"></label>
-        <label>D. A monumental tomb in Egypt <input id="matchD" type="number" min="1" max="5"></label>
-        <label>E. A writing system of Mesopotamia <input id="matchE" type="number" min="1" max="5"></label>
+        <h3>Definiciones</h3>
+        <label>A. Proceso de conservación de un cuerpo <input id="matchA" type="number" min="1" max="5"></label>
+        <label>B. Gobernante del Antiguo Egipto <input id="matchB" type="number" min="1" max="5"></label>
+        <label>C. Templo escalonado de Mesopotamia <input id="matchC" type="number" min="1" max="5"></label>
+        <label>D. Tumba monumental egipcia <input id="matchD" type="number" min="1" max="5"></label>
+        <label>E. Sistema de escritura de Mesopotamia <input id="matchE" type="number" min="1" max="5"></label>
       </div>
     </div>
 
@@ -658,22 +667,22 @@
 
   <!-- PASO 8 -->
   <div class="card step">
-    <span class="mini-badge">DRAG AND DROP</span>
+    <span class="mini-badge">ARRASTRAR Y SOLTAR</span>
     <h2>Arrastra y suelta</h2>
     <p>Arrastra cada concepto a su categoría correcta.</p>
 
     <div class="drag-bank" id="dragBank">
-      <div class="drag-item" draggable="true" data-type="egypt">Pharaoh</div>
-      <div class="drag-item" draggable="true" data-type="egypt">Pyramid</div>
-      <div class="drag-item" draggable="true" data-type="mesopotamia">Ziggurat</div>
-      <div class="drag-item" draggable="true" data-type="mesopotamia">Cuneiform writing</div>
-      <div class="drag-item" draggable="true" data-type="egypt">Mummification</div>
-      <div class="drag-item" draggable="true" data-type="egypt">Hieroglyphic writing</div>
+      <div class="drag-item" draggable="true" data-type="egypt">Faraón</div>
+      <div class="drag-item" draggable="true" data-type="egypt">Pirámide</div>
+      <div class="drag-item" draggable="true" data-type="mesopotamia">Zigurat</div>
+      <div class="drag-item" draggable="true" data-type="mesopotamia">Escritura cuneiforme</div>
+      <div class="drag-item" draggable="true" data-type="egypt">Momificación</div>
+      <div class="drag-item" draggable="true" data-type="egypt">Escritura jeroglífica</div>
     </div>
 
     <div class="drop-zone-wrap">
       <div class="drop-zone" data-accept="egypt">
-        <strong>Egypt</strong>
+        <strong>Egipto</strong>
         <div class="drop-content"></div>
       </div>
 
@@ -690,8 +699,8 @@
 
   <!-- PASO 9 -->
   <div class="card step">
-    <span class="mini-badge">EXAM MODE</span>
-    <h2>Modo examen ultra</h2>
+    <span class="mini-badge">MODO EXAMEN</span>
+    <h2>Modo examen</h2>
     <p>
       Genera un examen aleatorio con más peso de Egipto: sociedad, escultura,
       pirámides, religión y vida después de la muerte.
@@ -736,7 +745,7 @@
     <h3>Ranking local</h3>
     <p class="muted">Escribe un nombre para guardar tu resultado en este navegador.</p>
     <input type="text" id="playerName" placeholder="Nombre del alumno o alumna">
-    <button class="violet" onclick="saveLocalRanking()">Guardar en ranking</button>
+    <button class="brown" onclick="saveLocalRanking()">Guardar en ranking</button>
 
     <table>
       <thead>
@@ -755,7 +764,6 @@
 </div>
 
 <script>
-/* ---------------- UTILIDADES ---------------- */
 function normalizeText(text){
   return (text || "")
     .toLowerCase()
@@ -781,10 +789,9 @@ function formatTime(total){
 }
 
 function shuffle(array){
-  return array.sort(()=>Math.random()-0.5);
+  return [...array].sort(()=>Math.random()-0.5);
 }
 
-/* ---------------- ESTADO GLOBAL ---------------- */
 let step = 0;
 const steps = document.querySelectorAll('.step');
 
@@ -795,8 +802,6 @@ let level = Number(localStorage.getItem("hist_level")) || 1;
 let examMark = localStorage.getItem("hist_exam_mark") || "-";
 let combo = Number(localStorage.getItem("hist_combo")) || 0;
 let bestCombo = Number(localStorage.getItem("hist_best_combo")) || 0;
-
-/* ---------------- TEMPORIZADOR ESTUDIO ---------------- */
 let studySeconds = Number(localStorage.getItem("hist_study_seconds")) || 0;
 
 setInterval(()=>{
@@ -805,7 +810,6 @@ setInterval(()=>{
   localStorage.setItem("hist_study_seconds", studySeconds);
 },1000);
 
-/* ---------------- NAVEGACIÓN ---------------- */
 function show(){
   steps.forEach((s,i)=>s.style.display = i===step ? 'block' : 'none');
   document.getElementById("bar").style.width = ((step+1)/steps.length*100)+"%";
@@ -837,13 +841,11 @@ function goToStep(index){
   }
 }
 
-/* ---------------- MUSICA ---------------- */
 function toggleMusic(){
   const m = document.getElementById("music");
   if(m.paused){ m.play(); } else { m.pause(); }
 }
 
-/* ---------------- PROGRESO ---------------- */
 function addSuccess(p=5){
   hits++;
   points += p;
@@ -945,12 +947,16 @@ function resetProgress(){
   localStorage.removeItem("hist_combo");
   localStorage.removeItem("hist_best_combo");
   localStorage.removeItem("hist_study_seconds");
+  localStorage.removeItem("hist_vocab_score");
   updateStats();
   document.getElementById("studyTimer").innerText = "00:00";
   document.getElementById("lastExamMark").innerText = "-";
 }
 
-/* ---------------- ESQUEMA ---------------- */
+/* =========================
+   SCHEMA
+========================= */
+
 function checkSchema(){
   const e1 = document.getElementById("e1").value;
   const e2 = document.getElementById("e2").value;
@@ -965,7 +971,7 @@ function checkSchema(){
   if(includesAny(e3,['nilo','nile'])) score++;
   if(includesAny(e4,['faraon','pharaoh'])) score++;
   if(includesAny(e5,['politeista','polytheistic','muchos dioses','varios dioses'])) score++;
-  if(includesAny(e6,['tumbas','tombs','tombs for pharaohs','tumbas de faraones'])) score++;
+  if(includesAny(e6,['tumbas','tombs','tumbas de faraones','tombs for pharaohs'])) score++;
 
   const box = document.getElementById("schemaResult");
 
@@ -976,23 +982,162 @@ function checkSchema(){
     box.innerHTML = "<span class='correct'>✔ Bastante bien.</span> Te faltan algunos elementos por afinar.";
     addSuccess(8);
   }else{
-    box.innerHTML = "<span class='incorrect'>✘ Revisa.</span> Pistas: Tigris y Éufrates, cuneiform, Nile, Pharaoh, polytheistic, tombs.";
+    box.innerHTML = "<span class='incorrect'>✘ Revisa.</span> Pistas: Tigris y Éufrates, escritura cuneiforme, Nilo, faraón, politeísta, tumbas.";
     addFail(2);
   }
 }
 
-/* ---------------- VOCABULARIO ---------------- */
-function filterVocabulary(){
+/* =========================
+   VOCABULARY SECTION
+========================= */
+
+const vocabularyBank = [
+  { word:"Hydraulic civilizations", answers:["hydraulic civilizations","hydraulic civilization"], definition:"Civilizations that developed thanks to the use of river water." },
+  { word:"Ancient Age", answers:["ancient age"], definition:"A historical period that began with the invention of writing." },
+  { word:"Cuneiform writing", answers:["cuneiform writing","cuneiform"], definition:"An early writing system from Mesopotamia that used wedge-shaped signs." },
+  { word:"Hieroglyphic writing", answers:["hieroglyphic writing","hieroglyphics","hieroglyphic"], definition:"A writing system from Ancient Egypt that used pictures and symbols." },
+  { word:"Scribe", answers:["scribe","scribes"], definition:"A person who wrote documents and kept records in Ancient Egypt." },
+  { word:"City-state", answers:["city-state","city state"], definition:"An independent city and the surrounding land with its own government." },
+  { word:"Ziggurat", answers:["ziggurat"], definition:"A stepped temple built in Mesopotamia." },
+  { word:"Upper Egypt", answers:["upper egypt"], definition:"The southern part of Ancient Egypt." },
+  { word:"Lower Egypt", answers:["lower egypt"], definition:"The northern part of Ancient Egypt, near the Nile Delta." },
+  { word:"Pharaoh", answers:["pharaoh"], definition:"The ruler of Ancient Egypt." },
+  { word:"Polytheism", answers:["polytheism"], definition:"The belief in more than one god." },
+  { word:"Ka", answers:["ka"], definition:"The spiritual part of a person in Ancient Egyptian beliefs." },
+  { word:"Mummification", answers:["mummification"], definition:"The process of preserving a dead body." },
+  { word:"Mastaba", answers:["mastaba","mastabas"], definition:"An early Egyptian tomb with a rectangular shape." },
+  { word:"Pyramid", answers:["pyramid","pyramids"], definition:"A monumental tomb with triangular sides built for Egyptian pharaohs." },
+  { word:"Hypogeum", answers:["hypogeum","hypogea","hypogeums"], definition:"An underground tomb with chambers and corridors." },
+  { word:"Afterlife", answers:["afterlife"], definition:"Life after death." },
+  { word:"Sarcophagus", answers:["sarcophagus","sarcophagi"], definition:"A stone coffin where a mummy was placed." },
+  { word:"Canopic jars", answers:["canopic jars","canopic jar"], definition:"Special jars used to keep organs during mummification." },
+  { word:"Temple", answers:["temple","temples"], definition:"A building dedicated to the gods." },
+  { word:"Sculpture", answers:["sculpture"], definition:"Art made by carving or shaping materials such as stone or wood." },
+  { word:"Relief", answers:["relief"], definition:"A type of sculpture carved into a flat surface." },
+  { word:"Mummy", answers:["mummy","mummies"], definition:"A preserved dead body in Ancient Egypt." },
+  { word:"Funerary goods", answers:["funerary goods"], definition:"Objects buried with the dead for use in the afterlife." },
+  { word:"Nile", answers:["nile","the nile"], definition:"The river that was essential for life and agriculture in Ancient Egypt." },
+  { word:"Delta", answers:["delta"], definition:"A flat area where a river splits into branches before reaching the sea." },
+  { word:"Flood", answers:["flood","flooding"], definition:"The overflowing of river water onto the land." },
+  { word:"Harvest", answers:["harvest"], definition:"The time when crops are collected from the fields." }
+];
+
+let vocabularyActivities = [...vocabularyBank];
+let vocabularyChecked = {};
+let vocabOwnScore = Number(localStorage.getItem("hist_vocab_score")) || 0;
+
+function renderVocabularyActivities(){
+  const wrap = document.getElementById("vocabActivities");
+  if(!wrap) return;
+
+  wrap.innerHTML = "";
+
+  vocabularyActivities.forEach((item, index)=>{
+    const card = document.createElement("div");
+    card.className = "question-block vocab-activity";
+    card.dataset.search = normalizeText(item.word + " " + item.definition);
+
+    card.innerHTML = `
+      <div class="vocab-item">
+        <p><b>Definition ${index + 1}:</b> ${item.definition}</p>
+        <label><b>Write the correct word:</b></label>
+        <input type="text" id="vocab_input_${index}" placeholder="Type the word in English">
+
+        <button class="primary" onclick="checkVocabularyItem(${index})">Check answer</button>
+        <button class="secondary" onclick="toggleModel('vocab_model_${index}')">Show / hide model</button>
+
+        <div id="vocab_feedback_${index}" class="feedback"></div>
+
+        <div id="vocab_model_${index}" class="model-answer">
+          <b>Model answer:</b> ${item.word}<br>
+          <b>Definition:</b> ${item.definition}
+        </div>
+      </div>
+    `;
+    wrap.appendChild(card);
+  });
+
+  updateVocabularyScoreBoard();
+}
+
+function checkVocabularyItem(index){
+  const input = document.getElementById(`vocab_input_${index}`);
+  const feedback = document.getElementById(`vocab_feedback_${index}`);
+  if(!input || !feedback) return;
+
+  const userAnswer = normalizeText(input.value);
+  const item = vocabularyActivities[index];
+
+  if(!userAnswer){
+    feedback.innerHTML = "<span class='incorrect'>✘ Write an answer first.</span>";
+    return;
+  }
+
+  if(vocabularyChecked[index]){
+    feedback.innerHTML = "<span class='muted'>Already checked.</span>";
+    return;
+  }
+
+  const correct = item.answers.some(ans => normalizeText(ans) === userAnswer);
+
+  if(correct){
+    feedback.innerHTML = `<span class='correct'>✔ Correct!</span> ${item.word}`;
+    vocabularyChecked[index] = true;
+    vocabOwnScore++;
+    localStorage.setItem("hist_vocab_score", vocabOwnScore);
+    addSuccess(4);
+  }else{
+    feedback.innerHTML = "<span class='incorrect'>✘ Not correct.</span> Open the model answer and try the next one.";
+    vocabularyChecked[index] = true;
+    addFail(1);
+  }
+
+  updateVocabularyScoreBoard();
+}
+
+function updateVocabularyScoreBoard(){
+  const scoreEl = document.getElementById("vocabScore");
+  const doneEl = document.getElementById("vocabDone");
+  const totalEl = document.getElementById("vocabTotal");
+
+  if(scoreEl) scoreEl.innerText = vocabOwnScore;
+  if(doneEl) doneEl.innerText = Object.keys(vocabularyChecked).length;
+  if(totalEl) totalEl.innerText = vocabularyActivities.length;
+}
+
+function shuffleVocabularyActivities(){
+  vocabularyActivities = shuffle(vocabularyBank);
+  vocabularyChecked = {};
+  renderVocabularyActivities();
+}
+
+function toggleVocabularyModels(){
+  document.querySelectorAll("[id^='vocab_model_']").forEach(el=>{
+    el.style.display = el.style.display === "block" ? "none" : "block";
+  });
+}
+
+function resetVocabularyAnswers(){
+  vocabOwnScore = 0;
+  vocabularyChecked = {};
+  localStorage.setItem("hist_vocab_score", "0");
+  renderVocabularyActivities();
+}
+
+function filterVocabularyActivities(){
   const search = normalizeText(document.getElementById("vocabSearch").value);
-  const items = document.querySelectorAll("#vocabGrid .vocab-item");
+  const items = document.querySelectorAll(".vocab-activity");
 
   items.forEach(item=>{
-    const text = normalizeText(item.innerText);
+    const text = item.dataset.search || "";
     item.style.display = text.includes(search) ? "block" : "none";
   });
 }
 
-/* ---------------- PREGUNTAS CORTAS ---------------- */
+/* =========================
+   SHORT QUESTIONS
+========================= */
+
 const shortQuestions = [
   {
     id:"q1",
@@ -1003,85 +1148,85 @@ const shortQuestions = [
   {
     id:"q2",
     q:"¿Qué es un faraón?",
-    keys:["rey de egipto","gobernante de egipto","ruler of egypt","gobernaba egipto"],
+    keys:["rey de egipto","gobernante de egipto","faraon","faraón"],
     model:"El faraón era el rey o gobernante del Antiguo Egipto."
   },
   {
     id:"q3",
     q:"¿Qué es una pirámide?",
-    keys:["tumba","tomb","tumba monumental"],
+    keys:["tumba","tumba monumental","tumbas"],
     model:"Una pirámide es una tumba monumental construida para algunos faraones."
   },
   {
     id:"q4",
     q:"¿Qué es la escultura?",
-    keys:["arte","art","figuras"],
+    keys:["arte","figuras","modelar","tallar"],
     model:"La escultura es el arte de crear figuras tallando o modelando materiales."
   },
   {
     id:"q5",
     q:"¿Qué es la vida después de la muerte?",
-    keys:["vida tras morir","afterlife","vida despues de morir","vida después de morir"],
+    keys:["vida tras morir","vida despues de morir","vida después de morir","otra vida"],
     model:"La vida después de la muerte es la creencia de que existe otra vida tras morir."
   },
   {
     id:"q6",
     q:"¿Qué río fue fundamental para la civilización egipcia?",
-    keys:["nilo","rio nilo","río nilo","nile"],
+    keys:["nilo","rio nilo","río nilo"],
     model:"El río fundamental para Egipto fue el Nilo."
   },
   {
     id:"q7",
     q:"¿Para qué servía la momificación?",
-    keys:["conservar el cuerpo","preservar el cuerpo","preserve the body","mantener el cuerpo"],
+    keys:["conservar el cuerpo","preservar el cuerpo","mantener el cuerpo"],
     model:"La momificación servía para conservar el cuerpo del difunto."
   },
   {
     id:"q8",
     q:"¿Qué eran las pirámides de Egipto?",
-    keys:["tumbas","tombs","tumbas de faraones","tumbas funerarias"],
+    keys:["tumbas","tumbas de faraones","tumbas funerarias"],
     model:"Las pirámides eran tumbas funerarias construidas para los faraones."
   },
   {
     id:"q9",
     q:"¿Cómo era la religión egipcia?",
-    keys:["politeista","politeísta","polytheistic","muchos dioses","varios dioses"],
+    keys:["politeista","politeísta","muchos dioses","varios dioses"],
     model:"La religión egipcia era politeísta porque creían en muchos dioses."
   },
   {
     id:"q10",
     q:"¿Qué representaba muchas veces la escultura egipcia?",
-    keys:["faraones o dioses","dioses o faraones","pharaohs and gods","faraones","dioses"],
+    keys:["faraones o dioses","dioses o faraones","faraones","dioses"],
     model:"La escultura egipcia representaba muchas veces faraones y dioses."
   },
   {
     id:"q11",
     q:"¿Cómo estaba organizada la sociedad egipcia en la parte más alta?",
-    keys:["faraon","pharaoh","faraón"],
+    keys:["faraon","faraón"],
     model:"En la parte más alta de la sociedad egipcia estaba el faraón."
   },
   {
     id:"q12",
     q:"¿Quiénes ayudaban al faraón a gobernar?",
-    keys:["funcionarios","scribes","escribas","sacerdotes"],
+    keys:["funcionarios","escribas","sacerdotes"],
     model:"Funcionarios, sacerdotes y escribas ayudaban al faraón a gobernar."
   },
   {
     id:"q13",
     q:"¿Qué importancia tenía la vida después de la muerte para los egipcios?",
-    keys:["muy importante","important","creian en otra vida","creían en otra vida"],
+    keys:["muy importante","importante","creian en otra vida","creían en otra vida"],
     model:"La vida después de la muerte era muy importante porque creían en otra vida."
   },
   {
     id:"q14",
     q:"¿Qué son las mastabas?",
-    keys:["tumbas","tombs","tumbas egipcias","tumbas antiguas"],
+    keys:["tumbas","tumbas egipcias","tumbas antiguas","rectangulares"],
     model:"Las mastabas eran tumbas egipcias de forma rectangular."
   },
   {
     id:"q15",
     q:"¿Qué son los hipogeos?",
-    keys:["tumbas subterraneas","tumbas subterráneas","underground tombs","subterraneas","subterráneas"],
+    keys:["tumbas subterraneas","tumbas subterráneas","excavadas en la roca","subterraneas","subterráneas"],
     model:"Los hipogeos eran tumbas subterráneas excavadas en la roca."
   }
 ];
@@ -1119,23 +1264,26 @@ function checkShortAnswer(id, index){
   }
 }
 
-/* ---------------- TEST ---------------- */
+/* =========================
+   TEST
+========================= */
+
 const testQuestions = [
-  { q:"1. Who ruled Ancient Egypt?", name:"t1", options:["A king","A pharaoh","A merchant"], correct:1, explain:"The correct answer is pharaoh." },
-  { q:"2. Which river was essential for Egyptian civilization?", name:"t2", options:["The Nile","The Tigris","The Indus"], correct:0, explain:"The Nile was essential for Egypt." },
-  { q:"3. What was a ziggurat?", name:"t3", options:["A Mesopotamian temple","An Egyptian pyramid","A palace wall"], correct:0, explain:"A ziggurat was a stepped temple in Mesopotamia." },
-  { q:"4. What was cuneiform writing?", name:"t4", options:["A Roman alphabet","A Mesopotamian writing system","A Greek poem"], correct:1, explain:"Cuneiform writing developed in Mesopotamia." },
-  { q:"5. What were pyramids mainly used for?", name:"t5", options:["As markets","As tombs","As schools"], correct:1, explain:"Pyramids were monumental tombs." },
-  { q:"6. What was mummification?", name:"t6", options:["A farming technique","A process to preserve the body","A military ceremony"], correct:1, explain:"Mummification preserved the dead body." },
-  { q:"7. Egyptian religion was...", name:"t7", options:["Monotheistic","Polytheistic","Without gods"], correct:1, explain:"Egyptians believed in many gods." },
-  { q:"8. What is the afterlife?", name:"t8", options:["Life after death","Life in a city","Life before birth"], correct:0, explain:"The afterlife means life after death." },
-  { q:"9. Egyptian sculptures usually represented...", name:"t9", options:["Farmers only","Pharaohs and gods","Ships only"], correct:1, explain:"Many sculptures represented pharaohs or gods." },
-  { q:"10. What was a mastaba?", name:"t10", options:["An early Egyptian tomb","A Mesopotamian law","A writing tool"], correct:0, explain:"A mastaba was a simple early Egyptian tomb." },
-  { q:"11. Who were scribes?", name:"t11", options:["Workers who built ships","People who wrote documents","Soldiers only"], correct:1, explain:"Scribes wrote texts and records." },
-  { q:"12. What was the Nile useful for?", name:"t12", options:["Agriculture","Only transport","Only fishing"], correct:0, explain:"It was key for agriculture." },
-  { q:"13. What did Egyptians believe about the dead?", name:"t13", options:["Nothing happened after death","There was an afterlife","They disappeared completely"], correct:1, explain:"They believed in life after death." },
-  { q:"14. What was Egyptian sculpture often like?", name:"t14", options:["Always moving fast","Rigid and frontal","Invisible"], correct:1, explain:"It was usually rigid and frontal." },
-  { q:"15. Why were funerary goods buried with the dead?", name:"t15", options:["For use in the afterlife","To decorate rivers","To build temples"], correct:0, explain:"They were for the afterlife." }
+  { q:"1. ¿Quién gobernaba el Antiguo Egipto?", name:"t1", options:["Un rey","Un faraón","Un mercader"], correct:1, explain:"La respuesta correcta es faraón." },
+  { q:"2. ¿Qué río fue esencial para la civilización egipcia?", name:"t2", options:["El Nilo","El Tigris","El Indo"], correct:0, explain:"El Nilo fue esencial para Egipto." },
+  { q:"3. ¿Qué era un zigurat?", name:"t3", options:["Un templo mesopotámico","Una pirámide egipcia","Un muro de palacio"], correct:0, explain:"Un zigurat era un templo escalonado de Mesopotamia." },
+  { q:"4. ¿Qué era la escritura cuneiforme?", name:"t4", options:["Un alfabeto romano","Un sistema de escritura de Mesopotamia","Un poema griego"], correct:1, explain:"La escritura cuneiforme se desarrolló en Mesopotamia." },
+  { q:"5. ¿Para qué servían principalmente las pirámides?", name:"t5", options:["Como mercados","Como tumbas","Como escuelas"], correct:1, explain:"Las pirámides eran tumbas monumentales." },
+  { q:"6. ¿Qué era la momificación?", name:"t6", options:["Una técnica agrícola","Un proceso para conservar el cuerpo","Una ceremonia militar"], correct:1, explain:"La momificación servía para conservar el cuerpo." },
+  { q:"7. La religión egipcia era...", name:"t7", options:["Monoteísta","Politeísta","Sin dioses"], correct:1, explain:"Los egipcios creían en muchos dioses." },
+  { q:"8. ¿Qué es la vida después de la muerte?", name:"t8", options:["La vida tras morir","La vida en una ciudad","La vida antes de nacer"], correct:0, explain:"La vida después de la muerte significa otra vida tras morir." },
+  { q:"9. La escultura egipcia representaba normalmente...", name:"t9", options:["Solo campesinos","Faraones y dioses","Solo barcos"], correct:1, explain:"Muchas esculturas representaban faraones o dioses." },
+  { q:"10. ¿Qué era una mastaba?", name:"t10", options:["Una tumba egipcia antigua","Una ley mesopotámica","Una herramienta de escritura"], correct:0, explain:"La mastaba era una tumba egipcia primitiva." },
+  { q:"11. ¿Quiénes eran los escribas?", name:"t11", options:["Trabajadores de barcos","Personas que escribían documentos","Solo soldados"], correct:1, explain:"Los escribas redactaban textos y registros." },
+  { q:"12. ¿Para qué servía el Nilo?", name:"t12", options:["Para la agricultura","Solo para el transporte","Solo para pescar"], correct:0, explain:"El Nilo era clave para la agricultura." },
+  { q:"13. ¿Qué creían los egipcios sobre los muertos?", name:"t13", options:["Que no pasaba nada después","Que existía otra vida","Que desaparecían completamente"], correct:1, explain:"Los egipcios creían en la vida después de la muerte." },
+  { q:"14. ¿Cómo era muchas veces la escultura egipcia?", name:"t14", options:["Siempre en movimiento","Rígida y frontal","Invisible"], correct:1, explain:"La escultura egipcia solía ser rígida y frontal." },
+  { q:"15. ¿Por qué se enterraban objetos con los muertos?", name:"t15", options:["Para usarlos en la otra vida","Para decorar ríos","Para construir templos"], correct:0, explain:"Se enterraban para la vida después de la muerte." }
 ];
 
 function renderTests(){
@@ -1171,12 +1319,12 @@ function checkAllTests(){
     if(selected){
       if(Number(selected.value) === item.correct){
         score++;
-        fb.innerHTML = `<span class="correct">✔ Correct.</span> ${item.explain}`;
+        fb.innerHTML = `<span class="correct">✔ Correcto.</span> ${item.explain}`;
       }else{
-        fb.innerHTML = `<span class="incorrect">✘ Incorrect.</span> ${item.explain}`;
+        fb.innerHTML = `<span class="incorrect">✘ Incorrecto.</span> ${item.explain}`;
       }
     }else{
-      fb.innerHTML = `<span class="incorrect">✘ No answer selected.</span> ${item.explain}`;
+      fb.innerHTML = `<span class="incorrect">✘ No has seleccionado respuesta.</span> ${item.explain}`;
     }
   });
 
@@ -1188,23 +1336,26 @@ function checkAllTests(){
   else addFail(3);
 }
 
-/* ---------------- VF ---------------- */
+/* =========================
+   VERDADERO / FALSO
+========================= */
+
 const vfQuestions = [
-  { q:"1. The pyramids were tombs.", correct:true, explain:"True. They were funerary monuments." },
-  { q:"2. Mesopotamia was located near the Tigris and Euphrates rivers.", correct:true, explain:"True. Those were its main rivers." },
-  { q:"3. Pharaohs were simple farmers.", correct:false, explain:"False. Pharaohs were the rulers of Egypt." },
-  { q:"4. Egyptian religion believed in many gods.", correct:true, explain:"True. It was polytheistic." },
-  { q:"5. Mummification was used to destroy the body.", correct:false, explain:"False. It was used to preserve the body." },
-  { q:"6. The Nile was important for agriculture in Egypt.", correct:true, explain:"True. Its water made farming possible." },
-  { q:"7. Egyptian sculpture often represented pharaohs and gods.", correct:true, explain:"True. This was very common." },
-  { q:"8. A mastaba was a type of early tomb.", correct:true, explain:"True. It was one of the first funerary constructions." },
-  { q:"9. The afterlife was unimportant in Egyptian culture.", correct:false, explain:"False. It was very important." },
-  { q:"10. Hypogeums were underground tombs.", correct:true, explain:"True. They were tombs excavated under the ground." },
-  { q:"11. The Egyptian society placed the pharaoh at the top.", correct:true, explain:"True. The pharaoh was at the top." },
-  { q:"12. Ziggurats were Egyptian pyramids.", correct:false, explain:"False. Ziggurats belonged to Mesopotamia." },
-  { q:"13. Hieroglyphics were used in Egypt.", correct:true, explain:"True. It was their writing system." },
-  { q:"14. Egyptians did not care about preserving bodies.", correct:false, explain:"False. They cared a lot about preserving them." },
-  { q:"15. Sculptures could represent gods, pharaohs and important people.", correct:true, explain:"True. That was common." }
+  { q:"1. Las pirámides eran tumbas.", correct:true, explain:"Verdadero. Eran monumentos funerarios." },
+  { q:"2. Mesopotamia estaba situada entre los ríos Tigris y Éufrates.", correct:true, explain:"Verdadero. Esos eran sus ríos principales." },
+  { q:"3. Los faraones eran simples campesinos.", correct:false, explain:"Falso. Los faraones eran los gobernantes de Egipto." },
+  { q:"4. La religión egipcia creía en muchos dioses.", correct:true, explain:"Verdadero. Era politeísta." },
+  { q:"5. La momificación servía para destruir el cuerpo.", correct:false, explain:"Falso. Servía para conservarlo." },
+  { q:"6. El Nilo fue importante para la agricultura en Egipto.", correct:true, explain:"Verdadero. Su agua hacía posible el cultivo." },
+  { q:"7. La escultura egipcia representaba con frecuencia a faraones y dioses.", correct:true, explain:"Verdadero. Era muy habitual." },
+  { q:"8. La mastaba era un tipo de tumba antigua.", correct:true, explain:"Verdadero. Fue una de las primeras construcciones funerarias." },
+  { q:"9. La vida después de la muerte no era importante en la cultura egipcia.", correct:false, explain:"Falso. Era muy importante." },
+  { q:"10. Los hipogeos eran tumbas subterráneas.", correct:true, explain:"Verdadero. Eran tumbas excavadas bajo tierra." },
+  { q:"11. En la sociedad egipcia el faraón ocupaba el lugar más alto.", correct:true, explain:"Verdadero. El faraón estaba en la cima social." },
+  { q:"12. Los zigurats eran pirámides egipcias.", correct:false, explain:"Falso. Los zigurats pertenecían a Mesopotamia." },
+  { q:"13. Los jeroglíficos se usaban en Egipto.", correct:true, explain:"Verdadero. Era su sistema de escritura." },
+  { q:"14. A los egipcios no les importaba conservar los cuerpos.", correct:false, explain:"Falso. Les importaba mucho por su creencia en la otra vida." },
+  { q:"15. Las esculturas podían representar dioses, faraones y personajes importantes.", correct:true, explain:"Verdadero. Eso era muy común." }
 ];
 
 function renderVF(){
@@ -1238,12 +1389,12 @@ function checkAllVF(){
       const val = selected.value === "true";
       if(val === item.correct){
         score++;
-        fb.innerHTML = `<span class="correct">✔ Correct.</span> ${item.explain}`;
+        fb.innerHTML = `<span class="correct">✔ Correcto.</span> ${item.explain}`;
       }else{
-        fb.innerHTML = `<span class="incorrect">✘ Incorrect.</span> ${item.explain}`;
+        fb.innerHTML = `<span class="incorrect">✘ Incorrecto.</span> ${item.explain}`;
       }
     }else{
-      fb.innerHTML = `<span class="incorrect">✘ No answer selected.</span> ${item.explain}`;
+      fb.innerHTML = `<span class="incorrect">✘ No has seleccionado respuesta.</span> ${item.explain}`;
     }
   });
 
@@ -1255,7 +1406,10 @@ function checkAllVF(){
   else addFail(3);
 }
 
-/* ---------------- MATCHING ---------------- */
+/* =========================
+   MATCHING
+========================= */
+
 function checkMatching(){
   const corrects = {
     matchA:"3",
@@ -1272,7 +1426,7 @@ function checkMatching(){
 
   const box = document.getElementById("matchingResult");
   if(score === 5){
-    box.innerHTML = "<span class='correct'>✔ Perfect matching.</span>";
+    box.innerHTML = "<span class='correct'>✔ Perfecto.</span>";
     addSuccess(20);
   }else if(score >= 3){
     box.innerHTML = `<span class='correct'>✔ Bien.</span> Has acertado ${score} de 5.`;
@@ -1283,7 +1437,10 @@ function checkMatching(){
   }
 }
 
-/* ---------------- DRAG & DROP ---------------- */
+/* =========================
+   DRAG & DROP
+========================= */
+
 let draggedItem = null;
 
 function initDragDrop(){
@@ -1312,20 +1469,15 @@ function initDragDrop(){
 
 function checkDragDrop(){
   const zones = document.querySelectorAll(".drop-zone");
-  let total = 0;
   let correct = 0;
 
   zones.forEach(zone=>{
     const accept = zone.dataset.accept;
     const items = zone.querySelectorAll(".drag-item");
     items.forEach(item=>{
-      total++;
       if(item.dataset.type === accept) correct++;
     });
   });
-
-  const bankItems = document.querySelectorAll("#dragBank .drag-item");
-  total += bankItems.length;
 
   const box = document.getElementById("dragResult");
   if(correct === 6){
@@ -1348,28 +1500,31 @@ function resetDragDrop(){
   document.getElementById("dragResult").innerHTML = "Actividad reiniciada.";
 }
 
-/* ---------------- EXAMEN ---------------- */
+/* =========================
+   EXAM
+========================= */
+
 const examBank = [
-  {q:"What is a pharaoh?", keywords:["ruler","king of egypt","gobernante","rey de egipto"]},
-  {q:"What are pyramids?", keywords:["tombs","tumbas","monumental tombs"]},
-  {q:"What is sculpture?", keywords:["art","arte","figures","figuras"]},
-  {q:"What is mummification?", keywords:["preserve the body","conservar el cuerpo","preserving the body"]},
-  {q:"What river was essential for Egypt?", keywords:["nile","nilo"]},
-  {q:"What is cuneiform writing?", keywords:["mesopotamia","writing system","escritura"]},
-  {q:"What is hieroglyphic writing?", keywords:["egypt","pictures","symbols","egipto"]},
-  {q:"What is the afterlife?", keywords:["life after death","vida despues de la muerte","vida después de la muerte","after death"]},
-  {q:"What is a ziggurat?", keywords:["temple","mesopotamia","templo"]},
-  {q:"What was the main function of the pyramids?", keywords:["tombs","burial","tumbas"]},
-  {q:"Why was the Nile important?", keywords:["agriculture","farming","agricultura","water"]},
-  {q:"What was a mastaba?", keywords:["tomb","tumba"]},
-  {q:"What was a hypogeum?", keywords:["underground tomb","tumba subterránea","underground"]},
-  {q:"What was polytheism?", keywords:["many gods","varios dioses","more than one god"]},
-  {q:"Who were scribes?", keywords:["wrote documents","records","escribian","escribían","documentos"]},
-  {q:"Who was at the top of Egyptian society?", keywords:["pharaoh","faraon","faraón"]},
-  {q:"Why did Egyptians preserve bodies?", keywords:["afterlife","otra vida","life after death","vida despues de la muerte"]},
-  {q:"What did Egyptian sculptures often represent?", keywords:["gods","pharaohs","dioses","faraones"]},
-  {q:"What were funerary goods?", keywords:["objects buried","objetos enterrados","afterlife","otra vida"]},
-  {q:"What was the role of the Nile floods?", keywords:["agriculture","fertile","fertil","fertile land","crops"]},
+  {q:"¿Qué es un faraón?", keywords:["gobernante","rey de egipto","faraon","faraón"]},
+  {q:"¿Qué son las pirámides?", keywords:["tumbas","tumba monumental"]},
+  {q:"¿Qué es la escultura?", keywords:["arte","figuras","tallar","modelar"]},
+  {q:"¿Qué es la momificación?", keywords:["conservar el cuerpo","preservar el cuerpo"]},
+  {q:"¿Qué río fue esencial para Egipto?", keywords:["nilo"]},
+  {q:"¿Qué es la escritura cuneiforme?", keywords:["mesopotamia","sistema de escritura","escritura"]},
+  {q:"¿Qué es la escritura jeroglífica?", keywords:["egipto","dibujos","simbolos","símbolos"]},
+  {q:"¿Qué es la vida después de la muerte?", keywords:["otra vida","vida despues de la muerte","vida después de la muerte"]},
+  {q:"¿Qué es un zigurat?", keywords:["templo","mesopotamia"]},
+  {q:"¿Cuál era la función principal de las pirámides?", keywords:["tumbas","enterramiento","faraones"]},
+  {q:"¿Por qué era importante el Nilo?", keywords:["agricultura","agua","cultivos"]},
+  {q:"¿Qué era una mastaba?", keywords:["tumba"]},
+  {q:"¿Qué era un hipogeo?", keywords:["tumba subterránea","subterránea","excavada"]},
+  {q:"¿Qué es el politeísmo?", keywords:["muchos dioses","varios dioses"]},
+  {q:"¿Quiénes eran los escribas?", keywords:["escribian","escribían","documentos","registros"]},
+  {q:"¿Quién ocupaba el lugar más alto en la sociedad egipcia?", keywords:["faraon","faraón"]},
+  {q:"¿Por qué conservaban los egipcios los cuerpos?", keywords:["otra vida","vida despues de la muerte","vida después de la muerte"]},
+  {q:"¿Qué representaban muchas esculturas egipcias?", keywords:["dioses","faraones"]},
+  {q:"¿Qué eran los ajuares funerarios?", keywords:["objetos enterrados","otra vida","vida después de la muerte"]},
+  {q:"¿Qué papel tenían las crecidas del Nilo?", keywords:["agricultura","tierra fertil","tierra fértil","cultivos"]}
 ];
 
 let examQuestionsSelected = [];
@@ -1383,17 +1538,16 @@ function startExam(){
   div.innerHTML = "";
   nota.innerHTML = "";
 
-  const egyptHeavy = shuffle([...examBank]).slice(0,8);
-  examQuestionsSelected = egyptHeavy;
+  examQuestionsSelected = shuffle(examBank).slice(0,8);
 
   examQuestionsSelected.forEach((item, index)=>{
     const block = document.createElement("div");
     block.className = "question-block";
     block.innerHTML = `
       <p><b>${index+1}. ${item.q}</b></p>
-      <textarea id="exam_${index}" placeholder="Write your answer here"></textarea>
+      <textarea id="exam_${index}" placeholder="Escribe aquí tu respuesta"></textarea>
       <button class="secondary" onclick="showMiniHint(${index})">Pista</button>
-      <div id="exam_hint_${index}" class="model-answer">Write the main idea in a short clear sentence.</div>
+      <div id="exam_hint_${index}" class="model-answer">Escribe la idea principal en una frase corta y clara.</div>
       <div id="exam_fb_${index}" class="feedback small"></div>
     `;
     div.appendChild(block);
@@ -1411,9 +1565,9 @@ function startExam(){
 
       if(includesAny(value, item.keywords)){
         score++;
-        fb.innerHTML = `<span class="correct">✔ Good answer.</span>`;
+        fb.innerHTML = `<span class="correct">✔ Buena respuesta.</span>`;
       }else{
-        fb.innerHTML = `<span class="incorrect">✘ Incomplete answer.</span> Try to include the key idea.`;
+        fb.innerHTML = `<span class="incorrect">✘ Respuesta incompleta.</span> Intenta incluir la idea principal.`;
       }
     });
 
@@ -1461,7 +1615,10 @@ function toggleExamTimer(){
   }
 }
 
-/* ---------------- RANKING LOCAL ---------------- */
+/* =========================
+   RANKING
+========================= */
+
 function saveLocalRanking(){
   const name = document.getElementById("playerName").value.trim();
   if(!name){
@@ -1505,10 +1662,14 @@ function renderLocalRanking(){
   }
 }
 
-/* ---------------- INICIO ---------------- */
+/* =========================
+   INIT
+========================= */
+
 renderShortQuestions();
 renderTests();
 renderVF();
+renderVocabularyActivities();
 initDragDrop();
 renderLocalRanking();
 show();
